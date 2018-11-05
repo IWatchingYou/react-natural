@@ -1,32 +1,63 @@
-.App {
+html, body{
+  margin: 0;
+  font-family: 'Neucha', cursive;
+  color: #f3f3f3;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.logo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: transparent;
+  color: #f3f3f3;
+  display: flex;
+  margin: 20px;
+}
+.logo h1{
+  margin: 0;
+  margin-left: 10px;
+}
+.mapGL{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.marker{
+  animation: pin 1s infinite;
+}
+@keyframes pin{
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.model{
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  top: 40%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.model h1{
+  color: #f3f3f3;
+  width: 100%;
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.model h4{
+  color: #f3f3f3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.rounded{
+  border-radius: 15px !important;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result{
+  position: absolute;
+  bottom: 0;
 }
