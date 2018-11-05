@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Map from '../components/Map';
+import MapView from '../views/MapView';
 
 class IndexRoute extends Component {
 
@@ -8,7 +8,7 @@ class IndexRoute extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path='/' component={Map} exact/>
+          <Route path='/' component={MapView} exact/>
         </Switch>
       </BrowserRouter>
     )

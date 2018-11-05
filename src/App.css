@@ -35,29 +35,41 @@ html, body{
 }
 .model{
   position: absolute;
-  width: 150px;
-  height: 220px;
+  width: 170px;
+  height: auto;
   top: 40%;
   left: 20%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  background-color: #636363;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 3px 3px #636363;
 }
-.model h1{
+.model h2{
   color: #f3f3f3;
   width: 100%;
   text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 20px;
 }
 .model h4{
   color: #f3f3f3;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 5%;
+  top: 5%;
   cursor: pointer;
+}
+.model h4:hover{
+  color: #ffffff;
 }
 .rounded{
   border-radius: 15px !important;
 }
 .result{
-  position: absolute;
-  bottom: 0;
+  width: 100%;
+  height: auto;
+  margin-top: 20%;
 }
