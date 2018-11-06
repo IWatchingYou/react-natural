@@ -16,6 +16,9 @@ html, body{
   display: flex;
   margin: 20px;
 }
+.logo-icon{
+  font-size: 30pt;
+}
 .logo h1{
   margin: 0;
   margin-left: 10px;

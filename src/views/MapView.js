@@ -9,8 +9,6 @@ class MapView extends Component{
 
   state = {
     viewport: {
-      width: window.innerWidth,
-      height: window.innerHeight,
       latitude: 0,
       longitude: 0,
       zoom: 0
@@ -29,11 +27,9 @@ class MapView extends Component{
     if(viewport.features[0].properties.name_en !== undefined){
       this.setState({
         viewport: {
-          width: window.innerWidth,
-          height: window.innerHeight,
           latitude: viewport.lngLat[1],
           longitude: viewport.lngLat[0],
-          zoom: 3
+          zoom: 4
         },
         lat: viewport.lngLat[1],
         lng: viewport.lngLat[0],
@@ -57,8 +53,6 @@ class MapView extends Component{
       .getCurrentPosition( position => {
           this.setState({
             viewport: {
-              width: window.innerWidth,
-              height: window.innerHeight,
               latitude: 35,
               longitude: 15,
               zoom: 1.4232929969965746
@@ -78,23 +72,28 @@ class MapView extends Component{
 
   render(){
     return(
-      <div>
-        <div className='logo'>
-          <FontAwesomeIcon icon={faFrog} color={'#FE8128'} size={'2x'}/>
-          <h1>Natural</h1>
+      <div className='container-flud'>
+        <div className="row">
+          <div className="col-md-12">
+          <div className='logo'>
+            <FontAwesomeIcon icon={faFrog} color={'#FE8128'} className="logo-icon"/>
+            <h1>Natural</h1>
+          </div>
+          <Map
+            style={{ width: '100%' , height: '100%' }}
+            viewport={this.state.viewport}
+            ChangeLocation={this.ChangeLocation}
+            ClickLocation={this.ClickLocation}
+            lat={this.state.lat}
+            lng={this.state.lng}
+          />
+          <Region
+            ismodel={this.state.ismodel}
+            region={this.state.region}
+            ClickCloseModel={this.ClickCloseModel}
+          />
+          </div>
         </div>
-        <Map
-          viewport={this.state.viewport}
-          ChangeLocation={this.ChangeLocation}
-          ClickLocation={this.ClickLocation}
-          lat={this.state.lat}
-          lng={this.state.lng}
-        />
-        <Region
-          ismodel={this.state.ismodel}
-          region={this.state.region}
-          ClickCloseModel={this.ClickCloseModel}
-        />
       </div>
     )
   }
